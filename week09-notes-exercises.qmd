@@ -75,11 +75,18 @@ ggplot(data2012, aes(x = reorder(Country, Total), y = Total)) +
   labs(title = "Figure 1. Medal counts", x = NULL, y = "Total medals") +
   theme_minimal(base_size = 12)
 
+
+ggplot(data2016, aes(x = reorder(Country, Total), y = Total)) +
+  geom_col(width = 0.7) +
+  coord_flip() +
+  labs(title = "Figure 2. Medal counts", x = NULL, y = "Total medals") +
+  theme_minimal(base_size = 12)
 ```
 
 
 3.  Describe the distribution of the total medal counts. What is the main
     noticeable feature?
+The united states ranked first in the total medal counts
     
 
 
@@ -144,6 +151,22 @@ Now that we have merged the data, we can explore them further.
 
 5.  Draw a scatter plot of the total medal counts, comparing 2016 with 2012.
 
+
+```{r}
+library(ggplot2)
+ggplot(oly, aes(x = Total_2012, y = Total_2016, label = Country)) +
+  geom_point(color = "steelblue", size = 3) +
+  geom_text(vjust = -0.8, size = 3.5) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(
+    x = "Total Medals in 2012",
+    y = "Total Medals in 2016",
+    title = "Comparison of Olympic Medal Counts: 2016 vs 2012"
+  ) +
+  theme_minimal()
+
+```
+
 6.  Describe the relationship you can see on the scatter plot.
 
 # Fitting a simple linear regression
@@ -163,6 +186,9 @@ the vertical direction) around the line.
 
 7.  Use the `lm()` function (as demonstrated in the lectures) to fit the above
     model. Store your result in a variable called `oly_lm`.
+```{r}
+oly_lm <-lm(Total_2016 ~Total_2012, data= oly)
+```
 
 To look at the details of the fitted model, we recommend the following
 functions which both come from the `broom` package:

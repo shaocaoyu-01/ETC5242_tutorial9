@@ -1,0 +1,24 @@
+{
+    "id": "B7D8A39A",
+    "path": "~/ETC5242_tutorial9/data/london_olympics2012.csv",
+    "project_path": "data/london_olympics2012.csv",
+    "type": "text",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1758703308610.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1758703095,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1758703095,
+    "read_only": false,
+    "read_only_alternatives": []
+}
